@@ -29,7 +29,7 @@ Once you see (env) in your prompt, you should be good to go.
 ## Adding Flask
 Now, you’ll want to use the Python Installer Program, pip, to install the library you’ll need for this lab. That library is called flask. Let’s install it now:
 
-### (env) $ pip3 install install Flask
+### (env) % pip3 install install Flask
 ...(messages and progress bars)...
 Successfully installed flask Werkzeug Jinja2 itsdangerous markupsafe click
 Cleaning up...
@@ -59,7 +59,7 @@ It’s a very good idea to keep track of the requirements for your project — t
 
 To see the libraries installed in an active virtual environment, you can use the command pip freeze. This command will list the names of installed libraries as well as their version numbers. Try that now (note that your output may differ from the example output below):
 
-### (env) $ pip3 freeze
+### (env) % pip3 freeze
 click==6.7
 Flask==0.12
 Jinja2==2.9.4
@@ -76,7 +76,7 @@ Right now, that information is just going to the terminal. That’s not as usefu
 
 Let’s run pip freeze again and redirect the output to a file called requirements.txt:
 
-### (env) $ pip3 freeze > requirements.txt
+### (env) % pip3 freeze > requirements.txt
 If you use the ls command to check the contents of your directory, you should see your awesome new requirements file listed. If you were to open that file, it should match the pip freeze output.
 
 Definitely do add requirements.txt to your Git repository. That way, when you look at this project later, you’ll have in Git information on the exact versions needed.
