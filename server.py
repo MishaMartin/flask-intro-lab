@@ -18,7 +18,17 @@ AWESOMENESS = [
 def start_here():
     """Home page."""
 
-    return "<!doctype html><html>Hi! This is the home page.</html>"
+    return """
+    <!doctype html>
+    <html>
+      <head>
+        <title>Start Here</title>
+      </head>
+      <body>
+        <a href="/hello">Take me to the start</a>
+      </body>
+    </html>
+    """
 
 
 @app.route('/hello')
@@ -34,8 +44,24 @@ def say_hello():
       <body>
         <h1>Hi There!</h1>
         <form action="/greet">
-          What's your name? <input type="text" name="person">
+          What's your name? <input type="text" name="person"><br>
+          What compliments would you like?<br>
+          <input type="radio" name="compliment" value="awsome">Awesome<br>
+          <input type="radio" name="compliment" value="terrific">Terrific<br>
+          <input type="radio" name="compliment" value="fantastic">Fantastic<br>
+          <input type="radio" name="compliment" value="neato">Neato<br>
+          <input type="radio" name="compliment" value="fantabulous">Fantabulous<br>
+          <input type="radio" name="compliment" value="wowza">Wowza<br>
+          <input type="radio" name="compliment" value="oh-so-not-meh">Oh-so-not-meh<br>
+          <input type="radio" name="compliment" value="brilliant">Brilliant<br>
+          <input type="radio" name="compliment" value="ducky">Ducky<br>
+          <input type="radio" name="compliment" value="coolio">Coolio<br>
+          <input type="radio" name="compliment" value="incredible">Incredible<br>
+          <input type="radio" name="compliment" value="wonderful">Wonderful<br>
+          <input type="radio" name="compliment" value="smashing">Smashing<br>
+          <input type="radio" name="compliment" value="lovely">Lovely<br>
           <input type="submit" value="Submit">
+          </select>
         </form>
       </body>
     </html>
@@ -48,7 +74,7 @@ def greet_person():
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliment = request.args.get("compliment")
 
     return f"""
     <!doctype html>

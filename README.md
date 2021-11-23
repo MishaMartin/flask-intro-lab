@@ -108,6 +108,7 @@ You DO NOT NEED to do these steps now. These are just useful instructions for wh
 
 For example, if you want to try out your flask-intro project on your laptop, you could use this pip functionality to get your environment set up properly.
 
+
 First, you’d use git clone to pull down your project:
 
 ```
