@@ -12,8 +12,10 @@ Since you’ll be using an add-on Python library, let’s first create a virtual
 
 Go to your terminal, and start by making sure you’re in the correct project directory:
 
-### pwd
+```
+pwd
 /home/user/src/flask-intro
+```
 
 For this project, you should be in the flask-intro directory that hbget created for you. If you aren’t in that directory, navigate there now.
 
