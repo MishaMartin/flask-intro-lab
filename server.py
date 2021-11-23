@@ -13,6 +13,10 @@ AWESOMENESS = [
     'oh-so-not-meh', 'brilliant', 'ducky', 'coolio', 'incredible',
     'wonderful', 'smashing', 'lovely']
 
+ROAST = [
+  'stinky', 'unwell', 'bad at your job', 'a dissapointment', 'lazy', 'upsetting',
+  'alright', 'surprisingly less than average'
+]
 
 @app.route('/')
 def start_here():
@@ -25,7 +29,9 @@ def start_here():
         <title>Start Here</title>
       </head>
       <body>
-        <a href="/hello">Take me to the start</a>
+      <h1>Please select a link to begin</h1>
+        <a href="/hello">Toast Me</a>
+        <a href="/info">Roast Me</a>
       </body>
     </html>
     """
@@ -88,6 +94,39 @@ def greet_person():
     </html>
     """
 
+@app.route("/info")
+def info():
+  return """
+    <!doctype html>
+    <html>
+      <head>
+        <title>Hi There!</title>
+      </head>
+      <body>
+        <h1>Hi There!</h1>
+        <form action="/diss">
+          What's your name? <input type="text" name="person"><input type="submit" value="Submit">
+        </form>
+      </body>
+    </html>
+    """
+
+@app.route("/diss")
+def diss():
+  person = request.args.get("person")
+  diss = choice(ROAST)
+  return f"""
+  <!doctype html>
+    <html>
+      <head>
+        <title>A Diss</title>
+      </head>
+      <body>
+      Hi, {person}! I think you're {diss}!
+      </body>
+    </html
+  </html>
+  """
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads"
