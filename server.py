@@ -89,7 +89,8 @@ def greet_person():
         <title>A Compliment</title>
       </head>
       <body>
-        Hi, {player}! I think you're {compliment}!
+        Hi, {player}! I think you're {compliment}!<br>
+        <a href="/">Start Over</a>
       </body>
     </html>
     """
@@ -122,7 +123,8 @@ def diss():
         <title>A Diss</title>
       </head>
       <body>
-      Hi, {person}! I think you're {diss}!
+      Hi, {person}! I think you're {diss}!<br>
+      <a href="/">Start Over</a>
       </body>
     </html
   </html>
