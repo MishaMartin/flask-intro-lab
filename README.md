@@ -21,27 +21,37 @@ For this project, you should be in the flask-intro directory that hbget created 
 
 When you’re in your project directory, create a virtual environment called env with the following command:
 
-### virtualenv env
+```
+virtualenv env
+```
+
 Just creating the virtual environment isn’t enough, though. To install libraries in that virtual environment, you’ll want to make sure you’re using it:
 
-### source env/bin/activate
-### (env) %
+```
+source env/bin/activate
+(env) %
+```
+
 Once you see (env) in your prompt, you should be good to go.
 
 ## Adding Flask
 Now, you’ll want to use the Python Installer Program, pip, to install the library you’ll need for this lab. That library is called flask. Let’s install it now:
 
-### (env) % pip3 install install Flask
+```
+(env) % pip3 install install Flask
 ...(messages and progress bars)...
 Successfully installed flask Werkzeug Jinja2 itsdangerous markupsafe click
 Cleaning up...
+```
 
 Your output should show a bunch of messages about collecting and downloading flask and a few other libraries and then tell you which versions of those libraries were installed. Success!
 
 ## Telling Git to Ignore env
 Now would be a great time to start using version control for this project. If you haven’t already, go ahead and initialize a Git repository.
 
-### git init
+```
+git init
+```
 
 Run git status now to see what files Git is looking at. You should see two untracked files: env and server.py.
 
@@ -49,8 +59,10 @@ You’ll want add server.py to your Git repo, but not env, which is your actual 
 
 To avoid checking this directory into Git, create a .gitignore file now and add env to that file. When you’re done, your .gitignore should contain:
 
-### .gitignore
-### env
+```
+.gitignore
+env
+```
 
 Now, if you run git status, Git shouldn’t list the env directory as something it isn’t tracking. Git should just ignore the directory entirely, making it much harder for you to accidentally add env to your git repository.
 
@@ -61,7 +73,8 @@ It’s a very good idea to keep track of the requirements for your project — t
 
 To see the libraries installed in an active virtual environment, you can use the command pip freeze. This command will list the names of installed libraries as well as their version numbers. Try that now (note that your output may differ from the example output below):
 
-### (env) % pip3 freeze
+```
+(env) % pip3 freeze
 click==6.7
 Flask==0.12
 Jinja2==2.9.4
@@ -69,6 +82,7 @@ MarkupSafe==0.23
 Werkzeug==0.11.15
 itsdangerous==0.24
 wsgiref==0.1.2
+```
 
 In the output, you should see the libraries that were installed in the “Adding Flask” section. Pretty handy, right?
 
@@ -78,7 +92,10 @@ Right now, that information is just going to the terminal. That’s not as usefu
 
 Let’s run pip freeze again and redirect the output to a file called requirements.txt:
 
-### (env) % pip3 freeze > requirements.txt
+```
+(env) % pip3 freeze > requirements.txt
+```
+
 If you use the ls command to check the contents of your directory, you should see your awesome new requirements file listed. If you were to open that file, it should match the pip freeze output.
 
 Definitely do add requirements.txt to your Git repository. That way, when you look at this project later, you’ll have in Git information on the exact versions needed.
@@ -93,27 +110,37 @@ For example, if you want to try out your flask-intro project on your laptop, you
 
 First, you’d use git clone to pull down your project:
 
-### cd /path/to/where/you/keep/projects/on/your/laptop
-### git clone http://path-to-your-git-repo-at-github.git
-### cd flask-intro
+```
+cd /path/to/where/you/keep/projects/on/your/laptop
+git clone http://path-to-your-git-repo-at-github.git
+cd flask-intro
+```
 
 You’d then create a virtual environment:
 
-### virtualenv env
+```
+virtualenv env
+```
 
 Next, you’d activate that environment:
 
-### source env/bin/activate
+```
+source env/bin/activate
+```
 
 Finally, you’d use pip to install all of the requirements:
 
-### (env) % pip3 install install -r requirements.txt
+```
+(env) % pip3 install install -r requirements.txt
+```
 
 The -r option lets you supply a text file in the format pip freeze produces. This command should install all of the listed libraries.
 
 To confirm that the correct packages are installed, you’d just run:
 
-### (env) % pip3 freeze
+```
+(env) % pip3 freeze
+```
 
 At this point, you should have a setup on your laptop that is exactly like what you had in lab, without having to manually keep track of the required libraries.
 
@@ -126,11 +153,13 @@ You may find it helpful to open the docs in a new tab for easy access now, in ca
 
 Once you’ve set up your virtual environment, activated it, and installed Flask, you should just be able to type:
 
-### (env) % python3 server.py
+```
+(env) % python3 server.py
 * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 * Restarting with stat
 * Debugger is active!
 * Debugger pin code: ...
+```
 
 To visit your Flask app, you can open your browser to http://localhost:5000.
 
